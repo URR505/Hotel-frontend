@@ -1,0 +1,62 @@
+<div class="hotel-cards max-w-6xl">
+    <!-- Tarjeta de hotel -->
+    <div class="hotel-card">
+        <div class="hotel-image">
+            <img [src]="hotel.imageUrl" alt="Hotel Image">
+        </div>
+        <div class="hotel-details">
+            <h2 class="hotel-name">{{ hotel.name }}</h2>
+            <div class="hotel-address">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-5 h-5 fill-muted"
+                >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <p>{{ hotel.address }}</p>
+            </div>
+            <div class="end-card">
+                <div class="bedrooms">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 16L3 5V1a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4l3 11v5a1 1 0 0 1-1 1v2h-1v-2H2v2H1v-2a1 1 0 0 1-1-1v-5zM19 5h1V1H4v4h1V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h2V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1zm0 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V6h-2v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6H3.76L1.04 16h21.92L20.24 6H19zM1 17v4h22v-4H1zM6 4v4h4V4H6zm8 0v4h4V4h-4z"></path>
+                    </svg>
+                    <p><span class="avaible-bdrms">{{ hotel.availableRooms }}</span> Habitaciones disponibles</p>
+                </div>
+                <p class="hotel-price"><span>${{ hotel.pricePerNight }}</span>/dia</p>
+            </div>
+
+<div class="booking-section">
+    <div class="date-inputs">
+        <div class="date-input-container">
+            <label for="checkInDate">Fecha de entrada:</label>
+            <input type="date" id="checkInDate" [(ngModel)]="checkInDate" (change)="updateTotalPrice()">
+        </div>
+        <div class="date-input-container">
+            <label for="checkOutDate">Fecha de salida:</label>
+            <input type="date" id="checkOutDate" [(ngModel)]="checkOutDate" (change)="updateTotalPrice()">
+        </div>
+    </div>
+
+    <label for="rooms">Habitaciones:</label>
+    <input type="number" id="rooms" [(ngModel)]="rooms" (input)="updateTotalPrice()" min="1" max="{{ hotel.availableRooms }}">
+
+    <p>Total: ${{ totalPrice }}</p>
+
+    <div class="button-container">
+        <button (click)="pay()" class="button">Pagar</button>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
