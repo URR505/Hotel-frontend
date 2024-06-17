@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #5f5c5c; /* Fondo oscuro */
+    background: #5f5c5c; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,13 +10,13 @@ body {
 
 .login-container {
     text-align: center;
-    background: rgba(39, 38, 38, 0.8); /* Fondo semitransparente oscuro */
+    background: rgba(39, 38, 38, 0.8); 
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-    width: 300px; /* Ancho del contenedor */
-    max-width: 90%; /* Máximo ancho para mantener la responsividad */
-    margin-bottom: 20px; /* Espacio adicional debajo del contenedor */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    width: 300px; 
+    max-width: 90%; 
+    margin-bottom: 20px; 
 }
 
 .login-box {
@@ -41,36 +41,36 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente claro */
+    background: rgba(255, 255, 255, 0.1); 
     color: #fff;
 }
 
 .button-box {
-    margin-bottom: 10px; /* Menos margen entre cajas de botones */
+    margin-bottom: 10px; 
 }
 
 .button-box button {
     width: 100%;
     padding: 10px;
-    background-color: #1d1d1d; /* Color de fondo inicial */
+    background-color: #1d1d1d; 
     border: none;
     border-radius: 3px;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    transition: background-color 0.3s ease; 
 }
 
 .button-box button:hover {
-    background-color: #818181; /* Color de fondo al pasar el mouse */
+    background-color: #818181; 
 }
 
 .button-box button:active {
-    background-color: #b9b8b7; /* Color de fondo al ser presionado */
+    background-color: #b9b8b7; 
 }
 
 .forgot-password {
-    margin-bottom: 10px; /* Menos margen para olvidar contraseña */
+    margin-bottom: 10px; 
 }
 
 .forgot-password a {
@@ -79,7 +79,7 @@ body {
 }
 
 .register-box {
-    margin-top: 10px; /* Menos margen en la parte superior del registro */
+    margin-top: 10px; 
 }
 
 .register-box a {
@@ -90,15 +90,15 @@ body {
 }
 
 .google-login {
-    background: #dd4b39; /* Color rojo de Google */
+    background: #dd4b39; 
     color: #fff;
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    transition: background-color 0.3s ease; 
 }
 
 .google-login:hover {
-    background-color: #c23321; /* Color de fondo al pasar el mouse */
+    background-color: #c23321; 
 }
 
 .google-login:active {
-    background-color: #e7ccc9; /* Color de fondo al ser presionado */
+    background-color: #e7ccc9; 
 }
