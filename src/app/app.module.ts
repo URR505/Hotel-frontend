@@ -10,6 +10,7 @@ import { OrderComponent } from './order/order.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ForumsComponent } from './forums/forums.component';
 import { AboutComponent } from './about/about.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
