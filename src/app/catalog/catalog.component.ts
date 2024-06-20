@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from '../services/api.service';
+import { OrderService } from '../services/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -9,7 +11,7 @@ import { ApiService } from '../api.service';
 export class CatalogComponent implements OnInit {
   hotels: any[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private orderService: OrderService, private router: Router) { }
 
   ngOnInit() {
     this.getHotels();
@@ -19,10 +21,16 @@ export class CatalogComponent implements OnInit {
     this.apiService.getData().subscribe(
       response => {
         this.hotels = response;
+       
       },
       error => {
         console.error('Error fetching hotels', error);
       }
     );
+  }
+
+  selectHotel(hotel: any) {
+    this.orderService.setHotel(hotel);
+    this.router.navigate(['/order']);
   }
 }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,  OnInit  } from '@angular/core';
+import { OrderService } from '../services/order.service';
+
 
 @Component({
   selector: 'app-order',
@@ -6,19 +8,25 @@ import { Component } from '@angular/core';
   styleUrl: './order.component.css'
 })
 export class OrderComponent {
-  hotel = {
-    name: 'The Ritz-Carlton, Bali',
-    address: 'Jl. Raya Nusa Dua Selatan, Nusa Dua, Bali 80363, Indonesia',
-    imageUrl: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
-    availableRooms: 3,
-    pricePerNight: 450
-  };
-
+  hotel: any;
   checkInDate: string = '';
   checkOutDate: string = '';
   rooms = 1;
   totalPrice = 0;
+  tarjetaNumero: string = '';
+  mensajeValidacion: string = '';
 
+
+  constructor(private orderService: OrderService) { }
+
+  ngOnInit() {
+    this.hotel = this.orderService.getHotel();
+    if (!this.hotel) {
+      alert('No hotel selected!');
+      // Redirigir a la página de catálogo si no hay hotel seleccionado
+      window.location.href = '/catalog';
+    }
+  }
   updateTotalPrice() {
     const checkIn = new Date(this.checkInDate);
     const checkOut = new Date(this.checkOutDate);
@@ -34,5 +42,37 @@ export class OrderComponent {
 
   pay() {
     alert('Payment processed!');
+  }
+
+
+
+  verificarTarjeta() {
+    if (this.validarTarjeta(this.tarjetaNumero)) {
+      this.mensajeValidacion = 'El número de tarjeta es válido.';
+    } else {
+      this.mensajeValidacion = 'El número de tarjeta no es válido.';
+    }
+  }
+
+  validarTarjeta(numero: string): boolean {
+    let suma = 0;
+    let alternar = false;
+
+    // Invertir el número de la tarjeta para procesar de derecha a izquierda
+    for (let i = numero.length - 1; i >= 0; i--) {
+      let n = parseInt(numero.charAt(i), 10);
+
+      if (alternar) {
+        n *= 2;
+        if (n > 9) {
+          n -= 9;
+        }
+      }
+
+      suma += n;
+      alternar = !alternar;
+    }
+
+    return (suma % 10 === 0);
   }
 }
