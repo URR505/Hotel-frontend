@@ -17,10 +17,16 @@ body {
     width: 300px; 
     max-width: 90%; 
     margin-bottom: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .login-box {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .avatar {
@@ -37,11 +43,11 @@ body {
 }
 
 .input-box input {
-    width: 100%;
+    width:90%;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1); 
+    background: rgba(73, 69, 69, 0.726); 
     color: #fff;
 }
 
