@@ -41,7 +41,7 @@ body {
 }
 
 /* Media query to show .hideOnMobile class on larger screens */
-@media (min-width: 600px) {
+@media (min-width: 800px) {
     .hideOnMobile {
         display: list-item;
     }
