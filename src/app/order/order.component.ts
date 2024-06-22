@@ -1,4 +1,4 @@
-import { Component,  OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../services/order.service';
 
 
@@ -40,8 +40,8 @@ export class OrderComponent {
     }
   }
 
-  pay() {
-    alert('Payment processed!');
+  confirmar() {
+    alert('Pago Procesado');
   }
 
 

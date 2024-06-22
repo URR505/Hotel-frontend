@@ -124,128 +124,180 @@
     text-align: center;
 }
 
-.button {
-    width: 13em;
-    font-size:1rem;
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem;
+.Btn {
+  width: 170px;
+  height: 40px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
 }
 
-.button:hover {
-    background-color: #2d3748;
+.svgIcon {
+  width: 16px;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.Btn::before {
+  width: 170px;
+  height: 130px;
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: .3s;
+  mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+  transition-duration: .3s;
+  transform: translate(100%,-50%);
+  border-radius: 0;
+}
+
+.Btn:active {
+  transform: translate(5px,5px);
+  transition-duration: .3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.CC-Container {
+  width: 50%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 8, 8);
+  overflow: hidden;
+  padding: 0px 5px 0px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.322);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  margin: auto;
+}
+.creditcard-bottom {
+  margin-top: 2vh;
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 0 1vh;
+}
+
+.date-Container {
+  width: 15%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 8, 8);
+  overflow: hidden;
+  padding: 0px 5px 0px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.322);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  margin: auto;
+  margin-right: 10px;
+}
+
+.cvv-Container {
+  width: 10%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 8, 8);
+  overflow: hidden;
+  padding: 0px 5px 0px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.322);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  margin: auto;
+}
+
+
+.input {
+  width: 90%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  caret-color: rgb(255, 81, 0);
+  background-color: rgb(8, 8, 8);
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+.visaCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 25px;
+  background-color: rgb(8, 8, 8);
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.068);
+  border-radius: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .CC-Container {
+    width: 60%;
+  }
+  .date-Container {
+    width: 20%;
+  }
+  .cvv-Container {
+    width: 15%;
+  }
 }
 
 @media (min-width: 640px) {
-    .hotel-card {
-        width: calc(75% - 2rem);
-    }
+  .hotel-card {
+      width: calc(75% - 2rem);
+  }
+
+  
 }
 
 @media (min-width: 1024px) {
-    .hotel-card {
-        width: calc(75% - 2rem);
-    }
-
-
-
-
-
-    .visa-card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-end;
-        width: 300px;
-        height: 180px;
-        background-image: radial-gradient(
-          circle 897px at 9% 80.3%,
-          rgba(55, 60, 245, 1) 0%,
-          rgba(234, 161, 15, 0.9) 100.2%
-        );
-        border-radius: 10px;
-        padding: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        position: relative;
-        gap: 15px;
-      }
-      .logoContainer {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        height: fit-content;
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 18px;
-      }
-      .svgLogo {
-        height: 40px;
-        width: auto;
-      }
-      .inputstyle::placeholder {
-        color: #ffffff;
-      }
-      .inputstyle {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        color: white;
-        caret-color: red;
-        font-size: 13px;
-        height: 25px;
-        letter-spacing: 1.5px;
-      }
-      .number-container {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-      }
-      #cardNumber {
-        width: 100%;
-        height: 25px;
-      }
-      .name-date-cvv-container {
-        width: 100%;
-        height: 25px;
-        display: flex;
-        gap: 10px;
-      }
-      .name-wrapper {
-        width: 60%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-      }
-      .expiry-wrapper,
-      .cvv-wrapper {
-        width: 30%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-      }
-      .cvv-wrapper {
-        width: 10%;
-      }
-      #expiry,
-      #cvv {
-        width: 100%;
-      }
-      .input-label {
-        font-size: 8px;
-        letter-spacing: 1.5px;
-        color: #e2e2e2;
-        width: 100%;
-      }
-      
-
-
-
+  .hotel-card {
+      width: calc(75% - 2rem);
+  }
 }
