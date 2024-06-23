@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
-import { CatalogComponent } from './catalog/catalog.component';
-import { OrderComponent } from './order/order.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ForumsComponent } from './forums/forums.component';
-import { AboutComponent } from './about/about.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
+import { OrderComponent } from './components/order/order.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ForumsComponent } from './components/forums/forums.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 const routes: Routes = [
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'forums', component: ForumsComponent },
   { path: 'about', component: AboutComponent },
+
 ];
 
 @NgModule({

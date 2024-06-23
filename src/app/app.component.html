@@ -1,5 +1,8 @@
 <app-nav-bar></app-nav-bar>
 
 <main>
+  <div *ngIf="loading" class="loading-overlay">
+    <app-loader></app-loader>
+  </div>
   <router-outlet></router-outlet>
 </main>
