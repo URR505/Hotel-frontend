@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
+import { Hotel } from '../../interfaces/Hoteles';
 
 @Component({
   selector: 'app-catalog',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
   styleUrl: './catalog.component.css'
 })
 export class CatalogComponent implements OnInit {
-  hotels: any[] = [];
-  hotels2: any[] = [];
+  hotels: Hotel[] = [];
+  hotels2: Hotel[] = [];
   loaded = false;
+
 
   constructor(private apiService: ApiService, private orderService: OrderService, private router: Router) { }
 
@@ -24,9 +26,9 @@ export class CatalogComponent implements OnInit {
   }
 
   getHotels() {
-    this.apiService.getData().subscribe(
+    this.apiService.getHotels().subscribe(
       response => {
-        this.hotels2 = response;
+        this.hotels2 = response.value;
        
       },
       error => {
