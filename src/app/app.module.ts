@@ -12,7 +12,6 @@ import { ForumsComponent } from './components/forums/forums.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './components/loader/loader.component';
-import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { RegisterComponent } from './components/register/register.component';
     ProfileComponent,
     ForumsComponent,
     AboutComponent,
-    LoaderComponent,
-    RegisterComponent
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

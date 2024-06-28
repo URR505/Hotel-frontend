@@ -6,7 +6,6 @@ import { OrderComponent } from './components/order/order.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ForumsComponent } from './components/forums/forums.component';
 import { AboutComponent } from './components/about/about.component';
-import { RegisterComponent } from './components/register/register.component';
 
 
 const routes: Routes = [
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'forums', component: ForumsComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'register', component: RegisterComponent},
 
 ];
 
