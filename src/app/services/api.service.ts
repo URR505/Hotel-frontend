@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
-import { HotelesResponse } from '../interfaces/HotelesResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class ApiService {
 
 
   // GET
-  getHotels(): Observable<HotelesResponse> {
+  getData(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/hoteles`);
   }
 
