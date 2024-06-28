@@ -1,48 +1,46 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-}
-
-.navbar li {
-    border: solid 0px;
-}
-
-.navbar li a {
-    padding-left: 20px;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
-}
-
-.navbar li a:hover {
-    background-color: #c4c4c4;
-}
-
-.hideOnMobile {
-    display: none;
-}
-
-.menu-button a {
+.menu-container {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    
     display: block;
-    padding: 14px 20px;
-    text-decoration: none;
-    color: white;
+    position: absolute;
+    top: 100%;
+    left: 0; /* Ajusta la posición izquierda */
+    width: 200px; /* Ajusta el ancho del menú según sea necesario */
+    background-color: #fff; /* Color de fondo del menú */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra */
+    z-index: 1; /* Asegura que esté por encima del resto del contenido */
+    padding: 5px; /* Espaciado interno del menú */
+    border-radius: 4px; /* Bordes redondeados */
+    transform: translateX(-62%); /* Centra el menú respecto al punto izquierdo */
+    overflow: hidden;
+  }
+  
+  .dropdown-menu.active {
+    display: block; /* Mostrar el menú cuando esté activo */
+  }
+  
+  .dropdown-menu li {
+  list-style-type: none;
+  margin-bottom: 8px;
+  text-align: center;
+  display: flex; /* Utiliza flexbox para centrar verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
-/* Media query to show .hideOnMobile class on larger screens */
-@media (min-width: 800px) {
-    .hideOnMobile {
-        display: list-item;
-    }
+.dropdown-menu li a {
+    width: 100%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  text-decoration: none;
+  color: #960000;
 }
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+  

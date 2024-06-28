@@ -1,15 +1,26 @@
 import { Component, Renderer2 } from '@angular/core';
-
+import * as CryptoJS from 'crypto-js';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../interfaces/User';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
-  constructor(private renderer: Renderer2) { }
+  public user: User | null = null;
+  showMenu: boolean = false;
+  logoutInProgress: boolean = false;
+  constructor(private renderer: Renderer2, private authService: AuthService) { }
 
   ngOnInit() {
-    this.hideSidebar(); // Asegúrate de que la barra lateral esté oculta al cargar la página
+    this.hideSidebar();
+    this.authService.userProfile$.subscribe(
+      user => {
+        console.log(user);
+        this.user = user;
+      }
+    );
   }
 
   showSidebar() {
@@ -20,5 +31,15 @@ export class NavBarComponent {
   hideSidebar() {
     const sidebar = document.querySelector('.sidebar') as HTMLElement;
     sidebar.style.display = 'none';
+  }
+
+
+  logout() {
+    this.authService.logout();
+  }
+  
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
   }
 }

@@ -10,11 +10,11 @@
     <div class="containerleft">
         <div class="container">
             <div class="title">Sign In</div>
-            <form action="" class="form">
-              <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-              <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
+            <form action="" class="form" [formGroup]="formLogin">
+              <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail" formControlName="email">
+              <input required="" class="input" type="password" name="password" id="password" placeholder="Password" formControlName="password">
               <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
-              <input class="login-button" type="submit" value="Sign In">
+              <a class="login-button" (click)="login()">Iniciar Sesion</a>
               
             </form>
             <div class="social-account-container">

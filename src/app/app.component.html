@@ -4,5 +4,10 @@
   <div *ngIf="loading" class="loading-overlay">
     <app-loader></app-loader>
   </div>
+
+  <div *ngIf="logoutLoading" class="logoutLoader">
+    <app-logout-loader></app-logout-loader>
+  </div>
+
   <router-outlet></router-outlet>
 </main>
